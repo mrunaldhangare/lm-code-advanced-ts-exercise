@@ -12,11 +12,9 @@ export function print(str, newLine = true) {
 	}
 }
 
-export function clear(addTopBorder) {
+export function clear(addTopBorder?: boolean): void {
 	console.clear();
-	if (addTopBorder === "yes") {
-		print("------------------------------------");
-	}
+	addTopBorder && print("------------------------------------");
 }
 
 const reader = readline.createInterface({
