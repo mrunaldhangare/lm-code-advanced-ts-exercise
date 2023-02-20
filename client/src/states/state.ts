@@ -1,7 +1,8 @@
 import { states } from "./states";
+import { States } from "./types";
 
 export class State {
-	state: string;
+	state: States;
 
 	constructor() {
 		this.state = states.MENU;
@@ -11,7 +12,7 @@ export class State {
 		return this.state;
 	}
 
-	set(newState: string) {
+	set(newState: States) {
 		this.state = newState;
 	}
 }

@@ -14,7 +14,7 @@ async function begin() {
 	await prompt("⌨️ Press [ENTER] to continue! 🕶️");
 	main();
 }
-
+//TO-DO: replace switch case
 async function main() {
 	let state = new State();
 
@@ -52,15 +52,6 @@ async function main() {
 			case "UNKNOWN":
 				clear();
 				print("😵 We have entered an unknown state.");
-				await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
-				state.set(states.MENU);
-				break;
-			case "CABBAGE":
-				clear();
-				print("🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬", false);
-				print("🥬      CABBAGE MODE UNLOCKED     🥬", false);
-				print("🥬     Why did you want this?     🥬", false);
-				print("🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬🥬", false);
 				await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 				state.set(states.MENU);
 				break;

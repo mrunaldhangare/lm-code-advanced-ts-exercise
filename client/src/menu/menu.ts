@@ -1,7 +1,8 @@
 import { states } from "../states/states";
+import { States } from "../states/types";
 import { clear, print, printNewLine, prompt } from "../ui/console";
 
-export async function showMenu() {
+export const showMenu = async (): Promise<States> => {
 	clear();
 	print("0. Send Server Message", false);
 	print("1. Show all posts", false);
@@ -19,4 +20,4 @@ export async function showMenu() {
 	if (result === "4") return states.ADD_USER;
 
 	return states.UNKNOWN;
-}
+};
