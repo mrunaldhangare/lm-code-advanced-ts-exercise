@@ -1,7 +1,9 @@
 import { print, prompt } from "../ui/console";
 import { baseUrl } from "./base_url";
 
-export async function sendMessageToServer(message) {
+export const sendMessageToServer = async (
+	message: string
+): Promise<Boolean> => {
 	try {
 		const result = await fetch(baseUrl + "/api/send/", {
 			headers: {
@@ -20,4 +22,4 @@ export async function sendMessageToServer(message) {
 		console.error(e);
 		return false;
 	}
-}
+};

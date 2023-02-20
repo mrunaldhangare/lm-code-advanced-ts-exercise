@@ -12,7 +12,7 @@ export async function sendMessage() {
 
 	const success = await sendMessageToServer(message);
 
-	if (success === true) print("🥳 Message received successfully!");
+	if (success) print("🥳 Message received successfully!");
 	else print("😵 Message NOT received.");
 
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
