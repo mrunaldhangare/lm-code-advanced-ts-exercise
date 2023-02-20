@@ -1,13 +1,17 @@
 import { states } from "./states";
 
 export class State {
-	#state = states.MENU;
+	state: string;
 
-	get() {
-		return this.#state;
+	constructor() {
+		this.state = states.MENU;
 	}
 
-	set(newState) {
-		this.#state = newState;
+	get() {
+		return this.state;
+	}
+
+	set(newState: string) {
+		this.state = newState;
 	}
 }
