@@ -1,28 +1,26 @@
 import * as readline from "node:readline/promises";
 import { EOL } from "os";
 
-export function printNewLine() {
+export const printNewLine = (): void => {
 	console.log(EOL); // this imports the correct End-Of-Line for either Windows or Unix
-}
+};
 
-export function print(str, newLine = true) {
+export const print = (str: string, newLine = true): void => {
 	console.log(str);
-	if (newLine === true) {
-		printNewLine();
-	}
-}
+	newLine && printNewLine();
+};
 
-export function clear(addTopBorder?: boolean): void {
+export const clear = (addTopBorder?: boolean): void => {
 	console.clear();
 	addTopBorder && print("------------------------------------");
-}
+};
 
 const reader = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
 });
 
-export async function prompt(prompt) {
+export const prompt = async (prompt: string): Promise<string> => {
 	const answer = await reader.question(`${prompt}  > `);
 	return answer;
-}
+};
