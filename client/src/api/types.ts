@@ -3,9 +3,11 @@ export type Posts = {
 	id: string;
 	title: string;
 	text: string;
-	author: {
-		id: string;
-		name: string;
-		creationDate: string;
-	};
+	author: Users;
+};
+
+export type Users = {
+	id: string;
+	name: string;
+	creationDate: string;
 };

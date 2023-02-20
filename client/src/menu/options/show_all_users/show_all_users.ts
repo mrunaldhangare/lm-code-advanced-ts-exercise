@@ -1,7 +1,8 @@
 import { fetchAllUsers } from "../../../api/fetch_all_users";
+import { Users } from "../../../api/types";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
 
-export const showAllUsers = async (): Promise<[]> => {
+export const showAllUsers = async (): Promise<Users[]> => {
 	clear(true);
 
 	printNewLine();
