@@ -1,3 +1,1 @@
-export function exit(code) {
-	process.exit(code);
-}
+export const exit = (code: number): void => process.exit(code);
