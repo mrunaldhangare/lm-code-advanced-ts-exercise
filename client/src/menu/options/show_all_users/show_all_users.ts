@@ -1,7 +1,7 @@
 import { fetchAllUsers } from "../../../api/fetch_all_users";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
 
-export async function showAllUsers() {
+export const showAllUsers = async (): Promise<[]> => {
 	clear(true);
 
 	printNewLine();
@@ -18,4 +18,4 @@ export async function showAllUsers() {
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
 	return result;
-}
+};
