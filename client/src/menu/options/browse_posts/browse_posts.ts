@@ -10,7 +10,7 @@ export async function browsePosts() {
 
 	print(`📨 Fetching post "${desiredPostId}...`);
 
-	const result = await fetchPost(desiredPostId);
+	const result = await fetchPost(parseInt(desiredPostId));
 
 	print(`🥳 Received post:`);
 
