@@ -1,23 +1,28 @@
 import { fetchPost } from "../../../api/fetch_post";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
 
-export async function browsePosts() {
+export const browsePosts = async (): Promise<[]> => {
 	clear(false);
 
 	const desiredPostId = await prompt("Enter Post ID");
 
-	// TODO: should we validate this?!
+	if (desiredPostId !== "" && !isNaN(+desiredPostId)) {
+		print(`📨 Fetching post "${desiredPostId}...`);
 
-	print(`📨 Fetching post "${desiredPostId}...`);
+		const result = await fetchPost(parseInt(desiredPostId));
 
-	const result = await fetchPost(parseInt(desiredPostId));
+		print(`🥳 Received post:`);
 
-	print(`🥳 Received post:`);
+		console.log(result);
 
-	console.log(result);
+		printNewLine();
+		await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
-	printNewLine();
-	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
-
-	return result;
-}
+		return result;
+	} else {
+		print(`🙁 Invalid post id:`);
+		printNewLine();
+		await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
+		return [];
+	}
+};
