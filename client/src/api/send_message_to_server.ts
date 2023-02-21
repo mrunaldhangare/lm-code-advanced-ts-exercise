@@ -1,11 +1,11 @@
 import { print, prompt } from "../ui/console";
-import { baseUrl } from "./base_url";
+import { config } from "./base_url";
 
 export const sendMessageToServer = async (
 	message: string
 ): Promise<Boolean> => {
 	try {
-		const result = await fetch(baseUrl + "/api/send/", {
+		const result = await fetch(config.baseUrl + "/api/send/", {
 			headers: {
 				"Content-Type": "application/json",
 			},
