@@ -1,5 +1,5 @@
 import { sendMessageToServer } from "../../../api/send_message_to_server";
-import { states } from "../../../states/states";
+import { STATES } from "../../../states/states";
 import { States } from "../../../states/types";
 import { clear, print, printNewLine, prompt } from "../../../ui/console";
 
@@ -18,5 +18,5 @@ export const sendMessage = async (): Promise<States> => {
 
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 
-	return states.MENU;
+	return STATES.MENU;
 };

@@ -1,4 +1,4 @@
-import { states } from "../states/states";
+import { STATES } from "../states/states";
 import { States } from "../states/types";
 import { clear, print, printNewLine, prompt } from "../ui/console";
 
@@ -13,11 +13,11 @@ export const showMenu = async (): Promise<States> => {
 
 	const result = await prompt("What shall we do? ");
 
-	if (result === "0") return states.SEND_MESSAGE;
-	if (result === "1") return states.SHOW_POSTS;
-	if (result === "2") return states.SHOW_USERS;
-	if (result === "3") return states.BROWSE_POSTS;
-	if (result === "4") return states.ADD_USER;
+	if (result === "0") return STATES.SEND_MESSAGE;
+	if (result === "1") return STATES.SHOW_POSTS;
+	if (result === "2") return STATES.SHOW_USERS;
+	if (result === "3") return STATES.BROWSE_POSTS;
+	if (result === "4") return STATES.ADD_USER;
 
-	return states.UNKNOWN;
+	return STATES.UNKNOWN;
 };

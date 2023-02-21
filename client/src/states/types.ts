@@ -1,3 +1,3 @@
-import { states } from "./states";
+import { STATES } from "./states";
 
-export type States = keyof typeof states;
+export type States = keyof typeof STATES;

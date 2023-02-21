@@ -1,11 +1,11 @@
-import { states } from "./states";
+import { STATES } from "./states";
 import { States } from "./types";
 
 export class State {
 	state: States;
 
 	constructor() {
-		this.state = states.MENU;
+		this.state = STATES.MENU;
 	}
 
 	get() {
