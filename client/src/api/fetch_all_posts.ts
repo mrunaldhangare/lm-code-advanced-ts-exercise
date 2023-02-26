@@ -1,7 +1,7 @@
 import { config } from "./base_url";
-import { Posts } from "./types";
+import { PostResponse } from "./types";
 
-export const fetchAllPosts = async (): Promise<Posts[]> => {
+export const fetchAllPosts = async (): Promise<PostResponse[]> => {
 	try {
 		const result = await fetch(config.baseUrl + "/api/posts/all");
 		const posts = await result.json();

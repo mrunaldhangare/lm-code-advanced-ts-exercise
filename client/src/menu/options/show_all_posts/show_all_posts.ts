@@ -1,8 +1,8 @@
 import { fetchAllPosts } from "../../../api/fetch_all_posts";
-import { Posts } from "../../../api/types";
+import { PostResponse } from "../../../api/types";
 import { clear, print, prompt, printNewLine } from "../../../ui/console";
 
-export const showAllPosts = async (): Promise<Posts[]> => {
+export const showAllPosts = async (): Promise<PostResponse[]> => {
 	clear(true);
 
 	printNewLine();
