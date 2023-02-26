@@ -3,10 +3,11 @@ export type User = {
 	name: string;
 	creationDate: Date;
 };
-
-export type Post = {
-	id: string;
+export interface PostRequest {
 	title: string;
 	text: string;
+}
+export interface Post extends PostRequest {
+	id: string;
 	author: User;
-};
+}

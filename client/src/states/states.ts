@@ -1,4 +1,6 @@
 import { showMenu } from "../menu/menu";
+import { addPost } from "../menu/options/add_post/add_post";
+import { addUser } from "../menu/options/add_user/add_user";
 import { browsePosts } from "../menu/options/browse_posts/browse_posts";
 import { sendMessage } from "../menu/options/send_message/send_message";
 import { showAllPosts } from "../menu/options/show_all_posts/show_all_posts";
@@ -15,6 +17,8 @@ export const STATES = {
 
 	ADD_USER: "ADD_USER",
 
+	ADD_POST: "ADD_POST",
+
 	UNKNOWN: "UNKNOWN",
 } as const;
 
@@ -27,7 +31,8 @@ export const STATE_METHODS = {
 	SHOW_USERS: showAllUsers,
 	BROWSE_POSTS: browsePosts,
 
-	ADD_USER: showMenu,
+	ADD_USER: addUser,
+	ADD_POST: addPost,
 
 	UNKNOWN: showMenu,
 } as const;
